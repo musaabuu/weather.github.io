@@ -29,6 +29,9 @@ async function getWeatherData(city) {
 }
 
 function displayWeatherInfo(data) {
+
+    card.textContent = "";
+    
     const {name: city, main: {feels_like, humidity, pressure, temp}, sys: {country}, weather: [{description}]} = data;
 
     const countryDisplay = document.createElement("h1");
