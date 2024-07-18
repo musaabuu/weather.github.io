@@ -43,8 +43,8 @@ body {
 }
 
 .weather-card {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     text-align: center;
 }
