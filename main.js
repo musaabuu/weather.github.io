@@ -50,7 +50,10 @@ function displayWeatherInfo(data) {
     descriptionDisplay.textContent = description;
     feelslike.textContent = `Feels like: ${feels_like}°C`;
 
-    // card.append(countryDisplay);
+    let regionNames = new Intl.DisplayNames(['en'], {type: 'region'});
+    countryName = regionNames.of(country);
+
+    countryDisplay.textContent = countryName;
     card.append(cityDisplay);
     card.append(tempDisplay);
     card.append(humidityDisplay);
