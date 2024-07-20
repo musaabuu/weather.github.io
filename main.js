@@ -15,6 +15,7 @@ weatherForm.addEventListener("submit", async event => {
         try {
             const weatherData = await getWeatherData(city);
             displayWeatherInfo(weatherData);
+            console.log(weatherData);
         } catch (error) {
             console.log(error);
         }
@@ -31,7 +32,7 @@ async function getWeatherData(city) {
 function displayWeatherInfo(data) {
 
     card.textContent = "";
-    
+
     const {name: city, main: {feels_like, humidity, pressure, temp}, sys: {country}, weather: [{description}]} = data;
 
     const countryDisplay = document.createElement("h1");
@@ -41,7 +42,7 @@ function displayWeatherInfo(data) {
     const pressuredisplay = document.createElement("p");
     const descriptionDisplay = document.createElement("p");
     const feelslike = document.createElement("p");
-    
+
     let regionNames = new Intl.DisplayNames(['en'], {type: 'region'});
     countryName = regionNames.of(country);
 
@@ -53,7 +54,7 @@ function displayWeatherInfo(data) {
     descriptionDisplay.textContent = description;
     feelslike.textContent = `Feels like: ${feels_like}°C`;
 
-    card.append(cityDisplay);
+    card.append(countryDisplay);
     card.append(cityDisplay);
     card.append(tempDisplay);
     card.append(humidityDisplay);
