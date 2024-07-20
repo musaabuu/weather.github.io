@@ -46,7 +46,7 @@ function displayWeatherInfo(data) {
     let regionNames = new Intl.DisplayNames(['en'], {type: 'region'});
     // let countryName = regionNames.of(country);
 
-    countryDisplay.textContent = country;
+    countryDisplay.textContent = regionNames.of(country);
     cityDisplay.textContent = city;
     tempDisplay.textContent = `${temp}°C`;
     humidityDisplay.textContent = `Humidity: ${humidity}%`;
