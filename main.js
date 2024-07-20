@@ -44,7 +44,7 @@ function displayWeatherInfo(data) {
     const feelslike = document.createElement("p");
 
     let regionNames = new Intl.DisplayNames(['en'], {type: 'region'});
-    countryName = regionNames.of(country);
+    let countryName = regionNames.of(country);
 
     countryDisplay.textContent = countryName;
     cityDisplay.textContent = city;
