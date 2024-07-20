@@ -41,8 +41,11 @@ function displayWeatherInfo(data) {
     const pressuredisplay = document.createElement("p");
     const descriptionDisplay = document.createElement("p");
     const feelslike = document.createElement("p");
+    
+    let regionNames = new Intl.DisplayNames(['en'], {type: 'region'});
+    countryName = regionNames.of(country);
 
-    countryDisplay.textContent = country;
+    countryDisplay.textContent = countryName;
     cityDisplay.textContent = city;
     tempDisplay.textContent = `${temp}°C`;
     humidityDisplay.textContent = `Humidity: ${humidity}%`;
@@ -50,10 +53,7 @@ function displayWeatherInfo(data) {
     descriptionDisplay.textContent = description;
     feelslike.textContent = `Feels like: ${feels_like}°C`;
 
-    let regionNames = new Intl.DisplayNames(['en'], {type: 'region'});
-    countryName = regionNames.of(country);
-
-    countryDisplay.textContent = countryName;
+    card.append(cityDisplay);
     card.append(cityDisplay);
     card.append(tempDisplay);
     card.append(humidityDisplay);
