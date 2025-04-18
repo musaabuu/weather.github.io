@@ -1,1 +1,3 @@
-# weather.github.io
+# Weather App With Some API Shit 
+
+### WIP
