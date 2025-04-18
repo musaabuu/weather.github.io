@@ -35,9 +35,9 @@ function displayWeatherInfo(data) {
 
     const {name: city, main: {feels_like, humidity, pressure, temp}, sys: {country}, weather: [{description}]} = data;
 
-    const countryDisplay = document.createElement("h1");
-    const cityDisplay = document.createElement("span");
-    const tempDisplay = document.createElement("h2");
+    const countryDisplay = document.createElement("p");
+    const cityDisplay = document.createElement("p");
+    const tempDisplay = document.createElement("p");
     const humidityDisplay = document.createElement("p");
     const pressuredisplay = document.createElement("p");
     const descriptionDisplay = document.createElement("p");
@@ -46,12 +46,12 @@ function displayWeatherInfo(data) {
     let regionNames = new Intl.DisplayNames(['en'], {type: 'region'});
     // let countryName = regionNames.of(country);
 
-    countryDisplay.textContent = regionNames.of(country);
-    cityDisplay.textContent = city;
-    tempDisplay.textContent = `${temp}°C`;
+    countryDisplay.textContent = 'Country: ' + regionNames.of(country);
+    cityDisplay.textContent = 'City: ' + city;
+    tempDisplay.textContent = 'Temperature: ' + `${temp}°C`;
     humidityDisplay.textContent = `Humidity: ${humidity}%`;
-    pressuredisplay.textContent = `${pressure}hPa`;
-    descriptionDisplay.textContent = description;
+    pressuredisplay.textContent = `Pressure: ${pressure}hPa`;
+    descriptionDisplay.textContent = 'Clouds: ' + description;
     feelslike.textContent = `Feels like: ${feels_like}°C`;
 
     card.append(countryDisplay);
